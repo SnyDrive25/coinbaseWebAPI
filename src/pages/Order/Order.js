@@ -1,7 +1,11 @@
-import './App.css';
-import Navbar from './navbar/Navbar';
+import './Order.css';
+import '../../App.css';
+import Navbar from '../../navbar/Navbar';
 
-function App() {
+function Order() {
+
+  const fetch = require('node-fetch');
+
   return (
     <div className="App">
       <Navbar />
@@ -13,4 +17,4 @@ function App() {
   );
 }
 
-export default App;
+export default Order;

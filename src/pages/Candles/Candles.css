@@ -1,0 +1,21 @@
+table {
+    margin-top: 12px;
+    width: calc(100% + 18px);
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    box-shadow: 0 0 .4em black;
+    background-color: rgb(250,250,255,.4);
+    border-radius: 12px;
+}
+
+td, th {
+    line-height: 180%;
+}
+
+th {
+    position: sticky;
+    top: 4em;
+    background-color: black;
+    color: white;
+}

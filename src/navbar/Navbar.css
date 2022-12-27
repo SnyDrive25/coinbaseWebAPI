@@ -1,0 +1,27 @@
+.Navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: fit-content;
+    display: inline-flex;
+    z-index: 2;
+}
+
+.Navbar div {
+    margin-left: auto;
+    margin-right: auto;
+    width: 23vw;
+    font-size: 2em;
+    color: ghostwhite;
+    padding: 1em;
+    padding-bottom: 1.3em;
+    transition: all.2s;
+}
+
+.Navbar div:hover {
+    cursor: pointer;
+    backdrop-filter: blur(2em);
+    padding-bottom: 1em;
+    border-bottom: .3em solid ghostwhite;
+}

@@ -1,0 +1,93 @@
+
+.case {
+    width: 100px;
+    height: 100px;
+    max-height: 100px!important;
+    text-align: center;
+    line-height: 100px;
+    color: #0e3e7c;
+    border-radius: 150px;
+    user-select: none;
+    transition: font-size .2s;
+  }
+  
+.case:hover {
+    cursor: crosshair;
+    transform: scale(1.4);
+    background: radial-gradient(#c8c8e4, #0e3e7c);
+}
+
+.case:target, .case:active, .case:focus {
+    font-size: 0px;
+    background: radial-gradient(#e4c8c8, #7c3e0e);
+}
+
+.w50 {
+    width: 45%;
+    padding-left: 2%;
+    padding-right: 2%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input, button {
+    width: 100%;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    background-color: rgb(250,250,255,.4);
+    border: none;
+    padding: 9px;
+    border-radius: 9px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+input:active, input:target, input:focus, input:hover {
+    outline: none;
+}
+
+.buttons {
+    width: calc(100% + 18px);
+    display: inline-flex;
+}
+
+button {
+    width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button:hover {
+    cursor: pointer;
+    filter: invert(1);
+}
+
+#infos, #infos2 {
+    text-align: left;
+    margin-top: 25px;
+    width: 100%;
+    height: auto;
+    padding: 9px;
+    background-color: rgb(250,250,255,.4);
+    border-radius: 12px;
+}
+
+#infos p, #infos2 p {
+    color: grey;
+    text-align: center;
+}
+
+#infos2 {
+    display: flex;
+    flex-wrap: wrap;
+    user-select: all;
+}
+
+#infos2 span {
+    margin-left: auto;
+    margin-right: auto;
+    width: 48%;
+    min-width: 48%;
+    padding: 1%;
+    text-align: center;
+    color: grey;
+}
