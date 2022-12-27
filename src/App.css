@@ -1,38 +1,71 @@
 .App {
+  margin: 0;
+  padding: 0;
   text-align: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: url("/public/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.part {
+  position: fixed;
+  width: 80vw;
+  height: 80vh;
+  margin-left: 10vw;
+  margin-top: 10vh;
+  overflow-x: hidden;
+  overflow-y: visible;
+  background-color: rgb(250,250,255, .4);
+  border-radius: 25px;
+  backdrop-filter: blur(1.7em);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.ctn {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  height: fit-content;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.flex {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
 }
 
-.App-link {
-  color: #61dafb;
+.case {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  color: #0e3e7c;
+  border-radius: 150px;
+  user-select: none;
+  transition: font-size .2s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.case:hover {
+  cursor: crosshair;
+  background: radial-gradient(#c8c8e4, #0e3e7c);
+}
+
+.case:target, .case:active, .case:focus {
+  font-size: 0px;
+  background: radial-gradient(#e4c8c8, #7c3e0e);
+}
+
+h1 {
+  position: sticky;
+  user-select: none;
+  top: 0px;
+  margin: 0;
+  line-height: 200%;
+  width: 100%;
+  height: fit-content;
+  color: ghostwhite;
+  background-color: rgb(0,0,0, .7);
+  backdrop-filter: blur(2em);
 }
