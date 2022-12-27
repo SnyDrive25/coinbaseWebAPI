@@ -36,11 +36,16 @@ function Cryptocurrencies() {
     fetch('https://api.exchange.coinbase.com/products/' + pair + "/book?level=1", options)
       .then(res => res.json())
       .then(function(res) {
-        if(bidask.toLowerCase() === 'bid') {
-          document.getElementById("infos").innerHTML = "<strong>" + pair + " bid :</strong><br></br>- $" + res.bids[0][0] + "<br></br>- " + res.bids[0][1] + " " + pair.split('-')[0];
+        if(res.bids === undefined) {
+          alert("Sorry, this pair doesn't exist...");
         }
         else {
-          document.getElementById("infos").innerHTML = "<strong>" + pair + " ask :</strong><br></br>- $" + res.asks[0][0] + "<br></br>- " + res.asks[0][1] + " " + pair.split('-')[0];
+          if(bidask.toLowerCase() === 'bid') {
+            document.getElementById("infos").innerHTML = "<strong>" + pair + " bid :</strong><br></br>- $" + res.bids[0][0] + "<br></br>- " + res.bids[0][1] + " " + pair.split('-')[0];
+          }
+          else {
+            document.getElementById("infos").innerHTML = "<strong>" + pair + " ask :</strong><br></br>- $" + res.asks[0][0] + "<br></br>- " + res.asks[0][1] + " " + pair.split('-')[0];
+          }
         }
       })
   }
@@ -54,19 +59,24 @@ function Cryptocurrencies() {
     fetch('https://api.exchange.coinbase.com/products/' + asset + "/book?level=2", options)
     .then(res => res.json())
     .then(function(res) {
-      document.getElementById('infos2').innerHTML = "<span> <strong>BIDS</strong> </span><span> <strong>ASKS</strong> </span>";
-      const maxi = res.bids.length;
-      var allhtml = "";
-      for(let i = 0; i < res.asks.length; i++) {
-        if(i < maxi) {
-          allhtml += "<span> " + res.bids[i][0] + " <br></br> " + res.bids[i][1] + " </span>";
-        }
-        else {
-          allhtml += "<span></span>";
-        }
-        allhtml += "<span> " + res.asks[i][0] + " <br></br> " + res.asks[i][1] + " </span>";
+      if(res.bids === undefined) {
+        alert("Sorry, this pair doesn't exist...");
       }
-      document.getElementById('infos2').innerHTML += allhtml;
+      else {
+        document.getElementById('infos2').innerHTML = "<span> <strong>BIDS</strong> </span><span> <strong>ASKS</strong> </span>";
+        const maxi = res.bids.length;
+        var allhtml = "";
+        for(let i = 0; i < res.asks.length; i++) {
+          if(i < maxi) {
+            allhtml += "<span> " + res.bids[i][0] + " <br></br> " + res.bids[i][1] + " </span>";
+          }
+          else {
+            allhtml += "<span></span>";
+          }
+          allhtml += "<span> " + res.asks[i][0] + " <br></br> " + res.asks[i][1] + " </span>";
+        }
+        document.getElementById('infos2').innerHTML += allhtml;
+      }
     })
   }
 

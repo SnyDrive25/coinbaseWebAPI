@@ -17,35 +17,39 @@ function Candles() {
       .then(res => res.json())
       .then(function(res) {
         
-        // TO SETUP THE HEADERS OF THE CSV FILE        
-        for(let i = 0; i < res.length; i++) {
-          // TO INSERT LINES IN THE CSV FILE
-          document.getElementById('table').innerHTML += "<tr><td>" + res[i][0] + "</td><td>" + res[i][2] + "</td><td>" + res[i][1] + "</td><td>" + res[i][3] + "</td><td>" + res[i][4] + "</td><td>" + res[i][5] + "</td></tr>"
-          csvData.push([res[i][0],res[i][2],res[i][1],res[i][3],res[i][4],[res[i][5]]]);
+        if(res[0] === undefined) {
+          alert("Sorry, this pair doesn't exist...");
         }
+        else {
 
-        //create a user-defined function to download CSV file   
+          // TO SETUP THE HEADERS OF THE CSV FILE        
+          for(let i = 0; i < res.length; i++) {
+            // TO INSERT LINES IN THE CSV FILE
+            document.getElementById('table').innerHTML += "<tr><td>" + res[i][0] + "</td><td>" + res[i][2] + "</td><td>" + res[i][1] + "</td><td>" + res[i][3] + "</td><td>" + res[i][4] + "</td><td>" + res[i][5] + "</td></tr>"
+            csvData.push([res[i][0],res[i][2],res[i][1],res[i][3],res[i][4],[res[i][5]]]);
+          }
 
-        //define the heading for each row of the data  
-        var csv = 'date,high,low,open,close,volume\n';
+          //create a user-defined function to download CSV file   
 
-        //merge the data with CSV  
-        csvData.forEach(function(row) {
-        csv += row.join(',');
-        csv += "\n";
-        });
+          //define the heading for each row of the data  
+          var csv = 'date,high,low,open,close,volume\n';
 
-        var hiddenElement = document.createElement('a');
-        hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
-        hiddenElement.target = '_blank';
+          //merge the data with CSV  
+          csvData.forEach(function(row) {
+          csv += row.join(',');
+          csv += "\n";
+          });
 
-        const mydate = new Date();
-        console.log(mydate);
+          var hiddenElement = document.createElement('a');
+          hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
+          hiddenElement.target = '_blank';
 
-        //provide the name for the CSV file to be downloaded
-        hiddenElement.download = 'candles_' + pair + "_" + mydate.getDate() + mydate.getMonth() + mydate.getFullYear() + "_" + mydate.getHours() + mydate.getMinutes() + '.csv';
-        hiddenElement.click();
+          const mydate = new Date();
 
+          //provide the name for the CSV file to be downloaded
+          hiddenElement.download = 'candles_' + pair + "_" + mydate.getDate() + mydate.getMonth() + mydate.getFullYear() + "_" + mydate.getHours() + mydate.getMinutes() + '.csv';
+          hiddenElement.click();
+        }
       })
   }
 
