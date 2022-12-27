@@ -21,6 +21,7 @@
 
 .Navbar div:hover {
     cursor: pointer;
+    letter-spacing: .1em;
     backdrop-filter: blur(2em);
     padding-bottom: 1em;
     border-bottom: .3em solid ghostwhite;

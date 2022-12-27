@@ -6,16 +6,27 @@ table {
     border-collapse: collapse;
     box-shadow: 0 0 .4em black;
     background-color: rgb(250,250,255,.4);
-    border-radius: 12px;
 }
 
 td, th {
-    line-height: 180%;
+    line-height: 250%;
+    user-select: all;
+}
+
+td {
+    border-left: .1em solid grey;
+}
+
+thead {
+    border-left: .1em solid black;
+    margin: 0;
+    padding: 0;
 }
 
 th {
     position: sticky;
     top: 4em;
     background-color: black;
+    border-left: .1em solid black;
     color: white;
 }
