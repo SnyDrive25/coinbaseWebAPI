@@ -63,7 +63,7 @@ function Cryptocurrencies() {
         alert("Sorry, this pair doesn't exist...");
       }
       else {
-        document.getElementById('infos2').innerHTML = "<span> <strong>BIDS</strong> </span><span> <strong>ASKS</strong> </span>";
+        document.getElementById('infos2').innerHTML = "<span class='stick s-l'> <strong>BIDS</strong> </span><span class='stick s-r'> <strong>ASKS</strong> </span>";
         const maxi = res.bids.length;
         var allhtml = "";
         for(let i = 0; i < res.asks.length; i++) {

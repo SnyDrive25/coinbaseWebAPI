@@ -95,3 +95,17 @@ button:hover {
 #out {
     max-height: 300vh;
 }
+
+.stick {
+    position: sticky;
+    background-color: rgb(250,250,255,.9);
+    top: 5em;
+}
+
+.s-l {
+    border-radius: 12px 0 0 12px;
+}
+
+.s-r {
+    border-radius: 0 12px 12px 0;
+}

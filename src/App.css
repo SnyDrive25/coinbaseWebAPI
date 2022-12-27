@@ -56,3 +56,22 @@ h2 {
   margin-right: auto;
   width: 100%;
 }
+
+.intro {
+  text-align: left;
+  line-height: 350%;
+}
+
+.intro a {
+  background-color: ghostwhite;
+  color: #0e3e7c;
+  border-radius: 4px;
+  padding: 4px;
+  text-decoration: none;
+  transition: all.07s;
+}
+
+.intro a:hover {
+  border-radius: 4px 4px 0 0;
+  border-bottom: .2em solid #0e3e7c;
+}
