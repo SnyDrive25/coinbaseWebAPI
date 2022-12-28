@@ -12,11 +12,11 @@ function App() {
             Hi 👋, Welcome to my Coinbase API project.
             <br></br>
             <br></br>
-            Here, you will find a list of <a href="/cryptocurrencies" target="_blank">Cryptocurrencies</a> listed in coinbase API and you will be able to check all their bids and asks.
+            Here, you will find a list of <a href="/cryptocurrencies">Cryptocurrencies</a> listed in coinbase API and you will be able to check all their bids and asks.
             <br></br>
-            You will also find all <a href="/candles" target="_blank">Candles</a> of one pair of your choice.
+            You will also find all <a href="/candles">Candles</a> of one pair of your choice.
             <br></br>
-            You will be able to pass <a href="/order" target="_blank">Orders</a> too.
+            You will be able to pass <a href="/order">Orders</a> too.
           </p>
         </div>
       </div>
