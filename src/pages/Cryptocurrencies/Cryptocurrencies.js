@@ -41,10 +41,10 @@ function Cryptocurrencies() {
         }
         else {
           if(bidask.toLowerCase() === 'bid') {
-            document.getElementById("infos").innerHTML = "<strong>" + pair + " bid :</strong><br></br>- $" + res.bids[0][0] + "<br></br>- " + res.bids[0][1] + " " + pair.split('-')[0];
+            document.getElementById("infos").innerHTML = "<strong>" + pair + " bid :</strong><br></br>- " + res.bids[0][0] + " " + pair.split('-')[1] + "<br></br>- " + res.bids[0][1] + " " + pair.split('-')[0];
           }
           else {
-            document.getElementById("infos").innerHTML = "<strong>" + pair + " ask :</strong><br></br>- $" + res.asks[0][0] + "<br></br>- " + res.asks[0][1] + " " + pair.split('-')[0];
+            document.getElementById("infos").innerHTML = "<strong>" + pair + " ask :</strong><br></br>- " + res.asks[0][0] + " " + pair.split('-')[1] + "<br></br>- " + res.asks[0][1] + " " + pair.split('-')[0];
           }
         }
       })

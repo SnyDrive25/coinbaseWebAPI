@@ -12,7 +12,7 @@ function Candles() {
   function refreshDataCandle(duration) {
     var pair = document.getElementById('pair').value;
     const url = "https://api.exchange.coinbase.com/products/" + pair + "/candles?granularity=" + duration;
-    const options = {method: 'GET', headers: {accept: 'application/json'}};  
+    const options = {method: 'GET', headers: {accept: 'application/json'}};
     fetch(url, options)
       .then(res => res.json())
       .then(function(res) {
