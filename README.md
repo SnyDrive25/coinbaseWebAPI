@@ -8,4 +8,4 @@ In the project directory, you can run:
 
 ## Acceed online
 
-You can also acced to the project online at (https://coinbase.lesminions.com/)[https://coinbase.lesminions.com/]
+You can also acced to the project online at [https://coinbase.lesminions.com/](https://coinbase.lesminions.com/)
